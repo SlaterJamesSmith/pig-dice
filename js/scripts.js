@@ -112,7 +112,7 @@ $(document).ready(function () {
       $('#roll-player-two').toggle();
       $('.result-two').text("You rolled a 1");
     } else {
-    playerTwo.calcRoundScore()
+      playerTwo.calcRoundScore()
       $('.result-two').text(playerTwo.roundScore);
       $('.total-two-result').text(playerTwo.totalScore);
       console.log(playerTwo);
@@ -123,12 +123,19 @@ $(document).ready(function () {
   $('#pass-player-one').click(function () {
     playerOne.calcTotalScore()
     playerTwo.calcTotalScore()
-    $('.result').text(playerOne.roundScore);
-    $('.total-result').text(playerOne.totalScore);
-    $('.result-two').text(playerTwo.roundScore);
-    $('.total-two-result').text(playerTwo.totalScore);
-    $('#roll-player-one').toggle();
-    $('#roll-player-two').toggle();
+    if (playerOne.totalScore < 100 && playerTwo.totalScore < 100) {
+      $('.result').text(playerOne.roundScore);
+      $('.total-result').text(playerOne.totalScore);
+      $('.result-two').text(playerTwo.roundScore);
+      $('.total-two-result').text(playerTwo.totalScore);
+      $('#roll-player-one').toggle();
+      $('#roll-player-two').toggle();
+    }
+    else if (playerOne.totalScore >= 100) {
+      $("#winner").text("PLAYER ONE WINS")
+    } else if (playerTwo.totalScore >= 100) {
+      $("#winner").text("PLAYER TWO WINS")
+    }
     console.log(playerOne);
   });
 

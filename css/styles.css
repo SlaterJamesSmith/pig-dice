@@ -5,3 +5,7 @@
 #roll-player-two {
   display: none;
 }
+
+#winner {
+  color: green;
+}
