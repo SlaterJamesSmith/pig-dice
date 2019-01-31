@@ -10,7 +10,7 @@
     <title>Pig Latin</title>
   </head>
   <body>
-    <div class="container">
+    <div id="human" class="container">
       <h1 id="header">Pig</h1>
       <div class="row">
         <div class="col-sm-4">
@@ -35,8 +35,39 @@
         <img class="pig-left" src="img/pig-face.png" alt="a pig...">
         <img class="pig-right" src="img/pig-face.png" alt="a pig...">
       </div>
-      <h1><span id="winner"><span></h1>
+      <h1 id="winner"></h1>
       </div>
+
+
+
+
+
+    <div id="robo-pig" class="container">
+        <h1 id="header">Robo Pig</h1>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Player 1</h3>
+            <h3>Round Score: <span class="result"></span></h3>
+            <h3>Total Score: <span class="total-result"></span></h3>
+          </div>
+          <div class="col-sm-4">
+            <div class="buttons">
+              <button id="roll-human" class="btn btn-primary" type="button" name="human-player">Roll! (first player)</button>
+              <button id="pass-computer" class="btn btn-success" type="button" name="pass-computer">Pass Dice!</button>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <h3>_ROBO_PIG_</h3>
+            <h3>Round Score: <span class="comp-results" id="result-0"></span><span class="comp-results" id="result-1"></span><span class="comp-results" id="result-2"></span><span class="comp-results" id="result-3"></span></h3>
+            <h3>Total Score: <span class="total-two-result"></span></h3>
+          </div>
+        </div>
+        <div class="bottom">
+          <img class="pig-left" src="img/pig-face.png" alt="a pig...">
+          <img class="pig-right" src="img/pig-face.png" alt="a pig...">
+        </div>
+        <h1 id="winner"></h1>
+        </div>
 
   </body>
 </html>
