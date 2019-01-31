@@ -8,4 +8,42 @@
 
 #winner {
   color: green;
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  padding-bottom: 30px
+}
+
+h3 {
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.bottom {
+  padding-top: 100px;
+  position: relative;
+}
+
+.pig-left {
+  position:fixed;
+  bottom:0px;
+  right: 70%;
+}
+
+.pig-right {
+  display: none;
+  position:fixed;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  bottom:0px;
+  left: 70%;
 }

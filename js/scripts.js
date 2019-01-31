@@ -1,59 +1,3 @@
-// function Player(dice) {
-//   this.roundScore = 0;
-//   this.totalScore = 0;
-//   this.dice = dice;
-// }
-//
-//
-// function getRandomInt(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-//
-// function total(number) {
-//   // debugger;
-//   let tempTotal = 0;
-//   if (number !== 1) {
-//     tempTotal += getRandomInt(1, 6);
-//   } else {
-//     tempTotal = 0;
-//     return tempTotal
-//   }
-//   return tempTotal;
-// }
-//
-// function pigDice(score) {
-//   let scoreTotal = 0;
-// }
-//
-//
-//
-//
-// $(document).ready(function () {
-//   var playerOne = new Player();
-//   $('#roll').click(function () {
-//     var dice = getRandomInt(1, 6);
-//     return playerOne = new Player();
-//     $('.result').text(playerOne);
-//   });
-//
-//   console.log(playerOne);
-//   // var rollSecond;
-//   //   if (newScore !== NaN) {
-//   //     return rollFirst;
-//   //   } else {
-//   //     return newScore;
-//   //   }
-//
-//   // $('#second-roll').click(function () {
-//   //   $('.result').text(newScore);
-//   // });
-//
-// });
-
-
-
 function Player(dice) {
   this.roundScore = 0;
   this.totalScore = 0;
@@ -94,6 +38,8 @@ $(document).ready(function () {
     playerOne.dice = getRandomInt(1, 6);
     if (playerOne.dice === 1) {
       playerOne.calcRoundScore()
+      $('.pig-right').toggle();
+      $('.pig-left').toggle();
       $('#roll-player-one').toggle();
       $('#roll-player-two').toggle();
       $('.result').text("You rolled a 1");
@@ -108,6 +54,8 @@ $(document).ready(function () {
     playerTwo.dice = getRandomInt(1, 6);
     if (playerTwo.dice === 1) {
       playerTwo.calcRoundScore()
+      $('.pig-right').toggle();
+      $('.pig-left').toggle();
       $('#roll-player-one').toggle();
       $('#roll-player-two').toggle();
       $('.result-two').text("You rolled a 1");
@@ -130,6 +78,8 @@ $(document).ready(function () {
       $('.total-two-result').text(playerTwo.totalScore);
       $('#roll-player-one').toggle();
       $('#roll-player-two').toggle();
+      $('.pig-right').toggle();
+      $('.pig-left').toggle();
     }
     else if (playerOne.totalScore >= 100) {
       $("#winner").text("PLAYER ONE WINS")

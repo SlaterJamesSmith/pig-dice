@@ -11,19 +11,32 @@
   </head>
   <body>
     <div class="container">
-      <h1>Pig</h1>
-      <button id="roll-player-one" type="button" name="roll-player-one">Roll! (first player)</button>
-      <button id="roll-player-two" type="button" name="roll-player-two">Roll! (second player)!</button>
-      <button id="pass-player-one" type="button" name="pass-player-one">Pass Dice!</button>
-    </div>
-
-      <h3>Player 1 Round Score: <span class="result"></span></h3>
-      <h3>Player 1 Total Score: <span class="total-result"></span></h3>
-
-
-      <h3>Player 2 Round Score: <span class="result-two"></span></h3>
-      <h3>Player 2 Total Score: <span class="total-two-result"></span></h3>
+      <h1 id="header">Pig</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Player 1</h3>
+          <h3>Round Score: <span class="result"></span></h3>
+          <h3>Total Score: <span class="total-result"></span></h3>
+        </div>
+        <div class="col-sm-4">
+          <div class="buttons">
+            <button id="roll-player-one" class="btn btn-primary" type="button" name="roll-player-one">Roll! (first player)</button>
+            <button id="roll-player-two" class="btn btn-danger" type="button" name="roll-player-two">Roll! (second player)!</button>
+            <button id="pass-player-one" class="btn btn-success" type="button" name="pass-player-one">Pass Dice!</button>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3>Player 2</h3>
+          <h3>Round Score: <span class="result-two"></span></h3>
+          <h3>Total Score: <span class="total-two-result"></span></h3>
+        </div>
+      </div>
+      <div class="bottom">
+        <img class="pig-left" src="img/pig-face.png" alt="a pig...">
+        <img class="pig-right" src="img/pig-face.png" alt="a pig...">
+      </div>
       <h1><span id="winner"><span></h1>
+      </div>
 
   </body>
 </html>
