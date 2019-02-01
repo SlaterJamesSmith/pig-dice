@@ -34,7 +34,17 @@ var playerOne = new Player(0);
 var playerTwo = new Player(0);
 
 $(document).ready(function () {
-  // wrap in if function top once intro page is written
+  //landing
+  $('.two-player').click(function () {
+    $('.landing-page').hide();
+    $('#human').show();
+  });
+  $('.vs-pig').click(function () {
+    $('.landing-page').hide();
+    $('#robo-pig').show();
+  });
+
+  // two player game
   $('#roll-player-one').click(function () {
     playerOne.dice = getRandomInt(1, 6);
     if (playerOne.dice === 1) {
@@ -84,46 +94,34 @@ $(document).ready(function () {
       $("#winner").text("PLAYER TWO WINS")
     }
   });
-  // wrap in else if function once intro page is written
 
 
-
+// vs Robo Pig
   $('#roll-human').click(function () {
     playerOne.dice = getRandomInt(1, 6);
     if (playerOne.dice === 1) {
       playerOne.calcRoundScore()
-      $('.pig-right').toggle();
-      $('.pig-left').toggle();
+      $('.pig-left').show();
       $('.result').text("You rolled a 1");
+      $('#roll-human').hide();
     } else {
       playerOne.calcRoundScore()
       $('.result').text(playerOne.roundScore);
       $('.total-result').text(playerOne.totalScore);
     }
   });
-  $('#roll-player-two').click(function () {
-    playerTwo.dice = getRandomInt(1, 6);
-    if (playerTwo.dice === 1) {
-      playerTwo.calcRoundScore()
-      $('.pig-right').toggle();
-      $('.pig-left').toggle();
-      $('#roll-player-one').toggle();
-      $('#roll-player-two').toggle();
-      $('.result-two').text("You rolled a 1");
-    } else {
-      playerTwo.calcRoundScore()
-      $('.result-two').text(playerTwo.roundScore);
-      $('.total-two-result').text(playerTwo.totalScore);
-    }
-  });
+  
   $('#pass-computer').click(function () {
+    $('.pig-robo').show();
+    $('#roll-human').show();
+    playerOne.calcTotalScore()
+    $('.total-result').text(playerOne.totalScore);
     // playerOne.calcTotalScore()
     // playerTwo.calcTotalScore()
 
     if (playerOne.totalScore < 100 && playerTwo.totalScore < 100) {
 
       for(var i = 0; i < 4; i++) {
-        // debugger;
           playerTwo.dice = getRandomInt(1, 6);
           if(playerTwo.dice === 1) {
             playerTwo.roundScore = 0;
@@ -143,8 +141,6 @@ $(document).ready(function () {
             $('#result-'+i).text(playerTwo.dice+', ');
             $('.total-two-result').text(playerTwo.totalScore);
             playerTwo.roundScore += playerTwo.dice;
-            $('.pig-right').toggle();
-            $('.pig-left').toggle();
         }
       }
 

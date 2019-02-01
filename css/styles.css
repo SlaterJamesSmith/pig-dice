@@ -48,6 +48,22 @@ h3 {
   left: 70%;
 }
 
+.pig-robo {
+  display: none;
+  position:fixed;
+  bottom:0px;
+  left: 70%;
+}
+
 #human {
-  /* display: none; */
+  display: none;
+}
+
+#robo-pig {
+  display: none;
+}
+
+.landing-page {
+  text-align: center;
+  padding-top: 150px;
 }
