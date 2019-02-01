@@ -6,7 +6,7 @@
   display: none;
 }
 
-#winner {
+.winner {
   color: green;
   text-align: center;
 }

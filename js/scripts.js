@@ -89,9 +89,9 @@ $(document).ready(function () {
       $('.pig-left').toggle();
     }
     else if (playerOne.totalScore >= 100) {
-      $("#winner").text("PLAYER ONE WINS")
+      $(".winner").text("PLAYER ONE WINS")
     } else if (playerTwo.totalScore >= 100) {
-      $("#winner").text("PLAYER TWO WINS")
+      $(".winner").text("PLAYER TWO WINS")
     }
   });
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
       $('.total-result').text(playerOne.totalScore);
     }
   });
-  
+
   $('#pass-computer').click(function () {
     $('.pig-robo').show();
     $('#roll-human').show();
@@ -137,6 +137,9 @@ $(document).ready(function () {
             $('#result-'+i).text(playerTwo.dice);
             playerTwo.calcTotalScore()
             $('.total-two-result').text(playerTwo.totalScore);
+            if (playerTwo.totalScore >= 100) {
+              $(".winner").text("ROBO PIG WINS")
+            }
           } else {
             $('#result-'+i).text(playerTwo.dice+', ');
             $('.total-two-result').text(playerTwo.totalScore);
@@ -146,9 +149,9 @@ $(document).ready(function () {
 
     }
     else if (playerOne.totalScore >= 100) {
-      $("#winner").text("PLAYER ONE WINS")
+      $(".winner").text("PLAYER ONE WINS")
     } else if (playerTwo.totalScore >= 100) {
-      $("#winner").text("ROBO PIG WINS")
+      $(".winner").text("ROBO PIG WINS")
     }
   });
 
